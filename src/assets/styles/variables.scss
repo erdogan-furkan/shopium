@@ -1,0 +1,67 @@
+// Breakpoints
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+$screen-xxl: 1400px;
+
+:root {
+  //Colors
+  --color-gray-0: hsl(0, 0%, 0%);
+  --color-gray-1: hsl(0, 0%, 20%);
+  --color-gray-2: hsl(0, 0%, 40%);
+  --color-gray-3: hsl(0, 0%, 60%);
+  --color-gray-4: hsl(0, 0%, 80%);
+  --color-gray-5: hsl(0, 0%, 100%);
+
+  --color-1-opacity: 1;
+  --color-1: rgba(34, 40, 49, var(--color-1-opacity));
+  --color-2-opacity: 1;
+  --color-2: rgba(255, 211, 105, var(--color-3-opacity));
+  --color-3-opacity: 1;
+  --color-3: rgba(57, 62, 70, var(--color-2-opacity));
+  --color-4-opacity: 1;
+  --color-4: rgba(238, 238, 238, var(--color-4-opacity));
+  --color-success-opacity: 1;
+  --color-success: rgba(201, 242, 136, var(--color-success-opacity));
+  --color-info-opacity: 1;
+  --color-info: rgba(136, 242, 215, var(--color-info-opacity));
+  --color-warning-opacity: 1;
+  --color-warning: rgba(242, 211, 136, var(--color-warning-opacity));
+  --color-danger-opacity: 1;
+  --color-danger: rgba(242, 138, 136, var(--color-danger-opacity));
+  --color-main-text: var(--color-1);
+  --color-main-bg: var(--color-4);
+
+  //Font sizes
+  --fs-1: calc(1.375rem + 1.5vw);
+  --fs-2: calc(1.325rem + 0.9vw);
+  --fs-3: calc(1.3rem + 0.6vw);
+  --fs-4: calc(1.275rem + 0.3vw);
+  --fs-5: 1.25rem;
+  --fs-6: 1rem;
+  --fs-7: 0.75rem;
+
+  //Border radius
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-pill: 50rem;
+
+  //Transitions
+  --transition-sm: 0.25s;
+  --transition-md: 0.5s;
+  --transition-lg: 0.25s;
+
+  //Shadows
+  --shadow-color: var(--color-1);
+  --shadow-sm: 0px 0px 1rem 0px var(--shadow-color);
+  --shadow-md: 0px 0px 2rem 0px var(--shadow-color);
+  --shadow-lg: 0px 0px 3rem 0px var(--shadow-color);
+}
+
+[data-theme="dark"] {
+  //Colors
+  --color-main-text: var(--color-4);
+  --color-main-bg: var(--color-1);
+}

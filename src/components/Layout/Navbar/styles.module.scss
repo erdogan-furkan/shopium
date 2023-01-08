@@ -1,0 +1,29 @@
+@use "../../../assets/styles/mixins.scss" as *;
+
+.navbar {
+  @include flex-between;
+  background-color: var(--color-3);
+  color: var(--color-2);
+  height: 10vh;
+  padding: 0 0.5rem;
+
+  @include for-min-(md) {
+    padding: 0 1rem;
+  }
+}
+
+.navbarBrand {
+  font-size: var(--fs-5);
+  font-weight: 700;
+}
+
+.navbarToggler {
+  @include for-min-(md) {
+    display: none;
+  }
+}
+
+.navbarMenu {
+  @include flex-centered;
+  gap: 1rem;
+}

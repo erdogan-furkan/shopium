@@ -1,0 +1,28 @@
+.switch {
+  position: relative;
+  display: block;
+  width: 2rem;
+  height: 1rem;
+  padding: 0.125rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-1);
+
+  input {
+    display: none;
+
+    &:checked + .slider {
+      background-color: var(--color-2);
+      transform: translateX(100%);
+    }
+  }
+
+  .slider {
+    display: block;
+    width: 50%;
+    height: 100%;
+    border-radius: 50%;
+    clip-path: circle();
+    background-color: var(--color-4);
+    transition: var(--transition-sm);
+  }
+}

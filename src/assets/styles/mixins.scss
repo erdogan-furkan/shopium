@@ -1,0 +1,61 @@
+@use "./variables.scss" as *;
+
+@mixin for-min-($size) {
+  @if $size == sm {
+    @media only screen and (min-width: $screen-sm) {
+      @content;
+    }
+  } @else if $size == md {
+    @media only screen and (min-width: $screen-md) {
+      @content;
+    }
+  } @else if $size == lg {
+    @media only screen and (min-width: $screen-lg) {
+      @content;
+    }
+  } @else if $size == xl {
+    @media only screen and (min-width: $screen-xl) {
+      @content;
+    }
+  } @else if $size == xxl {
+    @media only screen and (min-width: $screen-xxl) {
+      @content;
+    }
+  }
+}
+
+@mixin for-max-($size) {
+  @if $size == sm {
+    @media only screen and (max-width: calc($screen-sm - 1px)) {
+      @content;
+    }
+  } @else if $size == md {
+    @media only screen and (max-width: calc($screen-md - 1px)) {
+      @content;
+    }
+  } @else if $size == lg {
+    @media only screen and (max-width: calc($screen-lg - 1px)) {
+      @content;
+    }
+  } @else if $size == xl {
+    @media only screen and (max-width: calc($screen-lg - 1px)) {
+      @content;
+    }
+  } @else if $size == xxl {
+    @media only screen and (max-width: calc($screen-xxl - 1px)) {
+      @content;
+    }
+  }
+}
+
+@mixin flex-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
