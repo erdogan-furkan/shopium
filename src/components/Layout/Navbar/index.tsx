@@ -1,7 +1,7 @@
 import React from "react";
 import { RiMenuLine, RiShoppingBasket2Line, RiHeartFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import { LanguageSwitcher } from "../../LanguageSwitcher";
+import LanguageSwitcher from "../../LanguageSwitcher";
 import ThemeSwitcher from "../../ThemeSwitcher";
 import s from "./styles.module.scss";
 
@@ -24,12 +24,12 @@ const Navbar = () => {
           </li>
           <li className={s.navbarItem}>
             <Link to={"/"}>
-              <RiShoppingBasket2Line />
+              <RiShoppingBasket2Line size={"1.5rem"} />
             </Link>
           </li>
           <li className={s.navbarItem}>
             <Link to={"/"}>
-              <RiHeartFill />
+              <RiHeartFill size={"1.5rem"} />
             </Link>
           </li>
         </ul>

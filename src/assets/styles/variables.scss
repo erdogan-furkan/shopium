@@ -7,31 +7,24 @@ $screen-xxl: 1400px;
 
 :root {
   //Colors
-  --color-gray-0: hsl(0, 0%, 0%);
+  --color-black: hsl(0, 0%, 0%);
   --color-gray-1: hsl(0, 0%, 20%);
   --color-gray-2: hsl(0, 0%, 40%);
   --color-gray-3: hsl(0, 0%, 60%);
   --color-gray-4: hsl(0, 0%, 80%);
-  --color-gray-5: hsl(0, 0%, 100%);
+  --color-white: hsl(0, 0%, 100%);
 
-  --color-1-opacity: 1;
-  --color-1: rgba(34, 40, 49, var(--color-1-opacity));
-  --color-2-opacity: 1;
-  --color-2: rgba(255, 211, 105, var(--color-3-opacity));
-  --color-3-opacity: 1;
-  --color-3: rgba(57, 62, 70, var(--color-2-opacity));
-  --color-4-opacity: 1;
-  --color-4: rgba(238, 238, 238, var(--color-4-opacity));
-  --color-success-opacity: 1;
-  --color-success: rgba(201, 242, 136, var(--color-success-opacity));
-  --color-info-opacity: 1;
-  --color-info: rgba(136, 242, 215, var(--color-info-opacity));
-  --color-warning-opacity: 1;
-  --color-warning: rgba(242, 211, 136, var(--color-warning-opacity));
-  --color-danger-opacity: 1;
-  --color-danger: rgba(242, 138, 136, var(--color-danger-opacity));
-  --color-main-text: var(--color-1);
-  --color-main-bg: var(--color-4);
+  --color-1: rgb(255, 211, 105);
+  --color-2: rgb(57, 62, 70);
+  --color-3: rgb(34, 40, 49);
+  --color-4: rgb(238, 238, 238);
+
+  --color-success: rgb(201, 242, 136);
+  --color-info: rgb(136, 242, 215);
+  --color-warning: rgb(242, 211, 136);
+  --color-danger: rgb(242, 138, 136);
+  --color-main-text: var(--color-black);
+  --color-main-bg: var(--color-white);
 
   //Font sizes
   --fs-1: calc(1.375rem + 1.5vw);
@@ -54,14 +47,13 @@ $screen-xxl: 1400px;
   --transition-lg: 0.25s;
 
   //Shadows
-  --shadow-color: var(--color-1);
-  --shadow-sm: 0px 0px 1rem 0px var(--shadow-color);
-  --shadow-md: 0px 0px 2rem 0px var(--shadow-color);
-  --shadow-lg: 0px 0px 3rem 0px var(--shadow-color);
+  --shadow-sm: 0px 0px 1rem 0px var(--color-black);
+  --shadow-md: 0px 0px 2rem 0px var(--color-black);
+  --shadow-lg: 0px 0px 3rem 0px var(--color-black);
 }
 
 [data-theme="dark"] {
   //Colors
   --color-main-text: var(--color-4);
-  --color-main-bg: var(--color-1);
+  --color-main-bg: var(--color-3);
 }

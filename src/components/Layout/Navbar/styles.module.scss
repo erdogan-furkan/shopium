@@ -2,8 +2,9 @@
 
 .navbar {
   @include flex-between;
-  background-color: var(--color-3);
-  color: var(--color-2);
+  background-color: var(--color-2);
+  color: var(--color-1);
+  box-shadow: var(--shadow-md);
   height: 10vh;
   padding: 0 0.5rem;
 
