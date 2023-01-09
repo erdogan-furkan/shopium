@@ -1,0 +1,26 @@
+@use "../../assets/styles/mixins.scss" as *;
+
+.container {
+  margin: 0 auto;
+  padding: 0 0.75rem;
+
+  &.fluid {
+    max-width: 100% !important;
+  }
+
+  @include for-min-(sm) {
+    max-width: 540px;
+  }
+
+  @include for-min-(md) {
+    max-width: 720px;
+  }
+
+  @include for-min-(lg) {
+    max-width: 960px;
+  }
+
+  @include for-min-(xl) {
+    max-width: 1140px;
+  }
+}

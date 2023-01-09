@@ -47,13 +47,20 @@ $screen-xxl: 1400px;
   --transition-lg: 0.25s;
 
   //Shadows
-  --shadow-sm: 0px 0px 1rem 0px var(--color-black);
-  --shadow-md: 0px 0px 2rem 0px var(--color-black);
-  --shadow-lg: 0px 0px 3rem 0px var(--color-black);
+  --shadow-xs: 0px 0px 1px 0px var(--color-gray-4);
+  --shadow-sm: 0px 0px 1rem 0px var(--color-gray-4);
+  --shadow-md: 0px 0px 2rem 0px var(--color-gray-4);
+  --shadow-lg: 0px 0px 3rem 0px var(--color-gray-4);
 }
 
 [data-theme="dark"] {
   //Colors
   --color-main-text: var(--color-4);
   --color-main-bg: var(--color-3);
+
+  //Shadows
+  --shadow-xs: 0px 0px 1px 0px var(--color-black);
+  --shadow-sm: 0px 0px 1rem 0px var(--color-black);
+  --shadow-md: 0px 0px 2rem 0px var(--color-black);
+  --shadow-lg: 0px 0px 3rem 0px var(--color-black);
 }

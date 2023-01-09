@@ -1,16 +1,14 @@
 @use "../../../assets/styles/mixins.scss" as *;
 
-.navbar {
-  @include flex-between;
+.header {
   background-color: var(--color-2);
   color: var(--color-1);
   box-shadow: var(--shadow-md);
-  height: 10vh;
-  padding: 0 0.5rem;
+}
 
-  @include for-min-(md) {
-    padding: 0 1rem;
-  }
+.navbar {
+  @include flex-between;
+  height: 10vh;
 }
 
 .navbarBrand {
@@ -19,12 +17,61 @@
 }
 
 .navbarToggler {
+  cursor: pointer;
+
   @include for-min-(md) {
     display: none;
   }
 }
 
-.navbarMenu {
-  @include flex-centered;
-  gap: 1rem;
+.navbarMenuNav {
+  display: none;
+
+  @include for-min-(md) {
+    display: block;
+  }
+
+  .navbarMenu {
+    @include flex-centered;
+    gap: 1rem;
+  }
+}
+
+.navbarMenuNavMobile {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -100%;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  padding: 1rem 0;
+  background-color: var(--color-2);
+  transition: var(--transition-md);
+
+  &.active {
+    right: 0;
+    opacity: 1;
+  }
+
+  .navbarMenuMobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .navbarMenuHeader {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 1rem;
+  }
+
+  .navbarMenuClose {
+    cursor: pointer;
+  }
+
+  @include for-min-(md) {
+    display: none;
+  }
 }
