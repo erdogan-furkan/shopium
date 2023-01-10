@@ -6,24 +6,10 @@ import Spinner from "../Spinner";
 import ErrorCard from "../ErrorCard";
 
 export interface Product {
-  id: number;
+  id: string;
   title: string;
   price: number;
-  description: string;
-  category: Category;
   image: string;
-  rating: Rating;
-}
-
-export enum Category {
-  Electronics = "electronics",
-  Jewelery = "jewelery",
-  MenSClothing = "men's clothing",
-}
-
-export interface Rating {
-  rate: number;
-  count: number;
 }
 
 const ProductList = () => {
@@ -65,6 +51,7 @@ const ProductList = () => {
           title={limitString(product.title, 50)}
           price={product.price}
           image={product.image}
+          id={product.id.toString()}
         />
       ))}
     </div>

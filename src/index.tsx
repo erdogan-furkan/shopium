@@ -5,7 +5,7 @@ import "./assets/styles/globals.scss";
 
 import "./lang/i18n";
 import router from "./routes/router";
-import store from "./store/store";
+import store from "./redux/store";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

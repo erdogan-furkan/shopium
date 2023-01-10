@@ -2,6 +2,7 @@ import s from "./styles.module.scss";
 import { MdLanguage } from "react-icons/md";
 import Select from "react-select";
 import useLang from "../../hooks/useLang";
+import classNames from "classnames";
 
 interface Language {
   value: string;
@@ -28,16 +29,14 @@ const LanguageSwitcher = () => {
         options={languages}
         onChange={handleChange}
         isSearchable={false}
-        theme={(theme) => ({
-          ...theme,
-          borderRadius: 0,
-          colors: {
-            ...theme.colors,
-            primary25: "var(--color-4)",
-            primary50: "transparent",
-            primary: "var(--color-2)",
-          },
-        })}
+        classNames={{
+          control: () => s.control,
+          indicatorsContainer: () => s.indicatorContainer,
+          singleValue: () => s.singleValue,
+          menuList: () => s.menuList,
+          option: (state) =>
+            classNames(s.option, { [s.selected]: state.isSelected }),
+        }}
       />
     </div>
   );

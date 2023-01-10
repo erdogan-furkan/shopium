@@ -4,8 +4,7 @@
   width: 2rem;
   height: 1rem;
   padding: 0.125rem;
-  border-radius: var(--radius-pill);
-  background-color: var(--color-1);
+  background-color: currentColor;
   cursor: pointer;
 
   input {
@@ -21,8 +20,6 @@
     display: block;
     width: 50%;
     height: 100%;
-    border-radius: 50%;
-    clip-path: circle();
     background-color: var(--color-4);
     transition: var(--transition-sm);
   }

@@ -1,15 +1,30 @@
 import s from "./styles.module.scss";
 import { RiHeartLine } from "react-icons/ri";
 import { useTranslation } from "react-i18next";
+import { addProduct } from "../../redux/slices/cartSlice";
+import { useDispatch } from "../../redux/store";
 
 interface Product {
+  id: string;
   title: string;
   price: number;
   image: string;
 }
 
-const ProductCard: React.FC<Product> = ({ title, price, image }) => {
+const ProductCard: React.FC<Product> = ({ id, title, price, image }) => {
+  const dispatch = useDispatch();
   const { t } = useTranslation();
+
+  const handleOnClick = () => {
+    dispatch(
+      addProduct({
+        id,
+        title,
+        price,
+        image,
+      })
+    );
+  };
 
   return (
     <div className={s.card}>
@@ -24,7 +39,9 @@ const ProductCard: React.FC<Product> = ({ title, price, image }) => {
 
         <div className={s.cardInfo}>
           <span className={s.cardPrice}>${price}</span>
-          <button className={s.cardAddButton}>{t("Add to cart")}</button>
+          <button className={s.cardAddButton} onClick={handleOnClick}>
+            {t("Add to cart")}
+          </button>
         </div>
       </div>
     </div>

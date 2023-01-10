@@ -11,6 +11,21 @@
   height: 10vh;
 }
 
+.navbarItemCart,
+.navbarItemFavorites {
+  @include flex-between;
+  gap: 0.5rem;
+  background-color: var(--color-3);
+  color: var(--color-1);
+  padding: 0.5rem;
+  border: 1px solid transparent;
+  transition: var(--transition-sm);
+
+  &:hover {
+    border-color: var(--color-1);
+  }
+}
+
 .navbarBrand {
   font-size: var(--fs-5);
   font-weight: 700;
@@ -47,6 +62,7 @@
   width: 100%;
   z-index: 100;
   padding: 1rem 0;
+  color: var(--color-main-text);
   background-color: var(--color-main-bg);
   transition: var(--transition-md);
 

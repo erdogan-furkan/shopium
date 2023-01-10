@@ -2,11 +2,11 @@ import classNames from "classnames";
 import { useState } from "react";
 import {
   RiMenuLine,
-  RiShoppingBasket2Line,
+  RiShoppingCartLine,
   RiHeartFill,
   RiCloseLine,
 } from "react-icons/ri";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Container from "../../Container";
 import LanguageSwitcher from "../../LanguageSwitcher";
 import ThemeSwitcher from "../../ThemeSwitcher";
@@ -23,7 +23,7 @@ const Navbar = () => {
     <header className={s.header}>
       <Container>
         <div className={s.navbar}>
-          <Link to={"/"}>Shopium</Link>
+          <NavLink to={"/"}>Shopium</NavLink>
 
           <div className={s.navbarToggler} onClick={toggleMenu}>
             <RiMenuLine size={"1.5rem"} />
@@ -38,14 +38,16 @@ const Navbar = () => {
                 <ThemeSwitcher />
               </li>
               <li className={s.navbarItem}>
-                <Link to={"/"}>
-                  <RiShoppingBasket2Line size={"1.5rem"} />
-                </Link>
+                <NavLink to={"/cart"} className={s.navbarItemCart}>
+                  <RiShoppingCartLine size={"1.5rem"} />
+                  <span>Sepetim</span>
+                </NavLink>
               </li>
               <li className={s.navbarItem}>
-                <Link to={"/"}>
+                <NavLink to={"/"} className={s.navbarItemFavorites}>
                   <RiHeartFill size={"1.5rem"} />
-                </Link>
+                  <span>Favorilerim</span>
+                </NavLink>
               </li>
             </ul>
           </nav>
@@ -56,7 +58,7 @@ const Navbar = () => {
             })}
           >
             <div className={s.navbarMenuHeader}>
-              <Link to={"/"}>Shopium</Link>
+              <NavLink to={"/"}>Shopium</NavLink>
               <div className={s.navbarMenuClose} onClick={toggleMenu}>
                 <RiCloseLine size={"1.5rem"} />
               </div>
@@ -73,15 +75,15 @@ const Navbar = () => {
               </li>
               <li className={s.navbarItem}>
                 <span>Sepetim</span>
-                <Link to={"/"}>
-                  <RiShoppingBasket2Line size={"1.5rem"} />
-                </Link>
+                <NavLink to={"/"}>
+                  <RiShoppingCartLine size={"1.5rem"} />
+                </NavLink>
               </li>
               <li className={s.navbarItem}>
                 <span>Favorilerim</span>
-                <Link to={"/"}>
+                <NavLink to={"/"}>
                   <RiHeartFill size={"1.5rem"} />
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </nav>

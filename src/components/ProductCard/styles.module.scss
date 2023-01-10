@@ -7,9 +7,14 @@
   min-height: 20rem;
   gap: 1rem;
   margin: 1px;
-  border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   overflow: hidden;
+
+  &:hover {
+    .cardFavoriteButton {
+      opacity: 1;
+    }
+  }
 }
 
 .cardImage {
@@ -22,19 +27,12 @@
     object-fit: cover;
   }
 
-  &:hover {
-    .cardFavoriteButton {
-      opacity: 1;
-    }
-  }
-
   .cardFavoriteButton {
     position: absolute;
     right: 0.25rem;
     top: 0.25rem;
     color: var(--color-1);
     background-color: var(--color-main-bg);
-    border-radius: 50%;
     padding: 0.5rem;
     box-shadow: var(--shadow-xs);
     cursor: pointer;
@@ -74,7 +72,6 @@
 
 .cardAddButton {
   padding: 0.5rem 1rem;
-  border-radius: var(--radius-pill);
   background-color: var(--color-2);
   border: 1px solid var(--color-main-text);
   color: var(--color-1);
