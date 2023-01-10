@@ -1,0 +1,36 @@
+@use "../../assets/styles/mixins.scss" as *;
+
+.quantityWrapper {
+  @include flex-centered;
+  flex-direction: row;
+  width: fit-content;
+
+  @include for-min-(md) {
+    flex-direction: column;
+  }
+}
+
+.quantity {
+  @include flex-centered;
+  width: 3rem;
+  height: 1rem;
+  padding: 1rem;
+  color: var(--color-main-text);
+  user-select: none;
+}
+
+.quantityButton {
+  @include flex-centered;
+  width: 3rem;
+  height: 3rem;
+  padding: 1rem;
+  font-size: var(--fs-4);
+  background-color: var(--color-black);
+  color: var(--color-1);
+  cursor: pointer;
+  transition: var(--transition-sm);
+
+  &:hover {
+    opacity: 0.75;
+  }
+}

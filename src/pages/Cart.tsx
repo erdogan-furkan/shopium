@@ -1,13 +1,12 @@
-import { useTranslation } from "react-i18next";
+import CartProductList from "../components/CartProductList";
 import Container from "../components/Container";
-import ProductList from "../components/ProductList";
 
 const Cart = () => {
-  const { t } = useTranslation();
-
   return (
     <section>
-      <Container>Cart</Container>
+      <Container>
+        <CartProductList />
+      </Container>
     </section>
   );
 };
