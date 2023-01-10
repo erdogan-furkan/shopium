@@ -64,17 +64,21 @@ const Navbar = () => {
 
             <ul className={s.navbarMenuMobile}>
               <li className={s.navbarItem}>
+                <span>Dil</span>
                 <LanguageSwitcher />
               </li>
               <li className={s.navbarItem}>
+                <span>Tema</span>
                 <ThemeSwitcher />
               </li>
               <li className={s.navbarItem}>
+                <span>Sepetim</span>
                 <Link to={"/"}>
                   <RiShoppingBasket2Line size={"1.5rem"} />
                 </Link>
               </li>
               <li className={s.navbarItem}>
+                <span>Favorilerim</span>
                 <Link to={"/"}>
                   <RiHeartFill size={"1.5rem"} />
                 </Link>

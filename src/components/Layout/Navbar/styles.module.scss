@@ -45,8 +45,9 @@
   opacity: 0;
   height: 100%;
   width: 100%;
+  z-index: 100;
   padding: 1rem 0;
-  background-color: var(--color-2);
+  background-color: var(--color-main-bg);
   transition: var(--transition-md);
 
   &.active {
@@ -57,14 +58,18 @@
   .navbarMenuMobile {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 1rem;
+    margin: 1rem;
+
+    .navbarItem {
+      @include flex-between;
+    }
   }
 
   .navbarMenuHeader {
     display: flex;
     justify-content: space-between;
-    margin: 0 1rem;
+    margin: 2rem 1rem;
   }
 
   .navbarMenuClose {

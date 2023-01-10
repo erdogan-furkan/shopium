@@ -12,8 +12,4 @@
   @include for-min-(lg) {
     grid-template-columns: repeat(3, 1fr);
   }
-
-  @include for-min-(xl) {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
