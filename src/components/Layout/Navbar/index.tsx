@@ -85,16 +85,20 @@ const Navbar = () => {
                 <span>{t("Theme")}</span>
                 <ThemeSwitcher />
               </li>
-              <li className={s.navbarItem}>
-                <span>{t("My Cart")}</span>
-                <NavLink to={"/"}>
-                  <RiShoppingCartLine size={"1.5rem"} />
+              <li>
+                <NavLink to={"/cart"} onClick={() => setIsActive(false)}>
+                  <div className={s.navbarItem}>
+                    <span>{t("My Cart")}</span>
+                    <RiShoppingCartLine size={"1.5rem"} />
+                  </div>
                 </NavLink>
               </li>
-              <li className={s.navbarItem}>
-                <span>{t("My Favorites")}</span>
-                <NavLink to={"/"}>
-                  <RiHeartFill size={"1.5rem"} />
+              <li>
+                <NavLink to={"/favorites"} onClick={() => setIsActive(false)}>
+                  <div className={s.navbarItem}>
+                    <span>{t("My Favorites")}</span>
+                    <RiHeartFill size={"1.5rem"} />
+                  </div>
                 </NavLink>
               </li>
             </ul>
