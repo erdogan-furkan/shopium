@@ -13,8 +13,10 @@ import { useDispatch, useSelector } from "../../redux/store";
 import Modal from "../Modal";
 import { toggleFavorite } from "../../redux/slices/favoriteSlice";
 import classNames from "classnames";
+import { useTranslation } from "react-i18next";
 
 const CartProductCard: React.FC<ProductCart> = (product) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const productIsFavorite = useSelector(
     (state) => state.favorite.products
@@ -24,12 +26,14 @@ const CartProductCard: React.FC<ProductCart> = (product) => {
   const handleRemoveAndFavorite = () => {
     dispatch(toggleFavorite(product));
     dispatch(removeProduct(product.id));
-    toast.success("Ürün sepetten kaldırıldı ve favorilere eklendi.");
+    toast.success(
+      t("Product has been removed from the cart and added to favourites!")
+    );
   };
 
   const handleRemove = () => {
     dispatch(removeProduct(product.id));
-    toast.success("Ürün sepetten kaldırıldı.");
+    toast.success(t("Product removed from cart successfully!"));
   };
 
   const handleIncrement = (id: string) => {
@@ -59,18 +63,18 @@ const CartProductCard: React.FC<ProductCart> = (product) => {
           />
         </div>
         <span className={s.cardDeleteButton} onClick={() => setShowModal(true)}>
-          Remove from Cart
+          {t("Remove from Cart")}
         </span>
       </div>
 
       <Modal show={showModal} handleClose={() => setShowModal(false)}>
         <div className={s.modal}>
           <p className={s.modalHeader}>
-            Ürünü sepetten kaldırmak istediğinize emin misiniz?
+            {t("Are you sure you want to remove the product from the cart?")}
           </p>
           <div className={s.modalActions}>
             <button className={s.modalRemoveButton} onClick={handleRemove}>
-              Ürünü sepetten kaldır
+              {t("Remove product from cart")}
             </button>
             <button
               className={classNames(s.modalFavoriteButton, {
@@ -78,7 +82,7 @@ const CartProductCard: React.FC<ProductCart> = (product) => {
               })}
               onClick={handleRemoveAndFavorite}
             >
-              Ürünü sepetten kaldır ve favorilere ekle
+              {t("Remove product from cart and add to favorites")}
             </button>
           </div>
         </div>

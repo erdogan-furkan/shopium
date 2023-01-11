@@ -2,12 +2,14 @@ import s from "./styles.module.scss";
 import { useSelector } from "../../redux/store";
 import CartProductCard from "../CartProductCard";
 import InfoCard from "../InfoCard";
+import { useTranslation } from "react-i18next";
 
 const CartProductList = () => {
+  const { t } = useTranslation();
   const products = useSelector((state) => state.cart.products);
 
   if (!products || products.length === 0) {
-    return <InfoCard infoMessage="Sepetinizde ürün bulunmamaktadır." />;
+    return <InfoCard infoMessage={t("Your cart is empty.")} />;
   }
 
   return (

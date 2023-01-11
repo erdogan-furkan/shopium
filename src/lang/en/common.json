@@ -1,4 +1,23 @@
 {
+  "DefaultError": "Sorry! An error has occured!",
   "Add to cart": "Add to cart",
-  "DefaultError": "Sorry! An error has occured!"
+  "Language": "Language",
+  "Theme": "Theme",
+  "My Cart": "My Cart",
+  "My Favorites": "My Favorites",
+  "Type to search...": "Type to search...",
+  "Ascending": "Ascending",
+  "Descending": "Descending",
+  "Go to Cart": "Go to Cart",
+  "Remove from Cart": "Remove from Cart",
+  "Are you sure you want to remove the product from the cart?": "Are you sure you want to remove the product from the cart?",
+  "Remove product from cart": "Remove product from cart",
+  "Remove product from cart and add to favorites": "Remove product from cart and add to favorites",
+  "Your cart is empty.": "Your cart is empty.",
+  "There are no products in your favorite list.": "There are no products in your favorite list.",
+  "Product added to cart successfully!": "Product added to cart successfully!",
+  "Product removed from cart successfully!": "Product removed from cart successfully!",
+  "Product added to favorites successfully!": "Product added to favorites successfully!",
+  "Product removed from favorites successfully!": "Product removed from favorites successfully!",
+  "Product has been removed from the cart and added to favourites!": "Product has been removed from the cart and added to favourites!"
 }

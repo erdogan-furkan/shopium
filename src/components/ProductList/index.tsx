@@ -4,8 +4,9 @@ import ProductCard from "../ProductCard";
 import { useEffect, useState } from "react";
 import Spinner from "../Spinner";
 import ErrorCard from "../ErrorCard";
-import classNames from "classnames";
 import Select from "react-select";
+import InfoCard from "../InfoCard";
+import { useTranslation } from "react-i18next";
 
 export interface Product {
   id: string;
@@ -14,15 +15,17 @@ export interface Product {
   image: string;
 }
 
-const sortOptions = [
-  { value: 1, label: "Ascending" },
-  { value: -1, label: "Descending" },
-];
-
 const limitString = (str: string, limit: number) =>
   str.length > limit ? `${str.substring(0, limit)}...` : str;
 
 const ProductList = () => {
+  const { t } = useTranslation();
+
+  const sortOptions = [
+    { value: 1, label: t("Ascending") },
+    { value: -1, label: t("Descending") },
+  ];
+
   const [products, setProducts] = useState<Product[] | undefined>(undefined);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<any>(undefined);
@@ -76,7 +79,7 @@ const ProductList = () => {
           className={s.searchFilter}
           value={searchFilter}
           onChange={(e) => setSearchFilter(e.currentTarget.value)}
-          placeholder="Aramak için yazın..."
+          placeholder={t("Type to search...") as string}
         />
         <Select
           defaultValue={sortOption}
@@ -103,17 +106,21 @@ const ProductList = () => {
         />
       </div>
 
-      <div className={s.productList}>
-        {filteredProducts?.map((product) => (
-          <ProductCard
-            key={product.id}
-            title={limitString(product.title, 50)}
-            price={product.price}
-            image={product.image}
-            id={product.id.toString()}
-          />
-        ))}
-      </div>
+      {filteredProducts?.length === 0 ? (
+        <InfoCard infoMessage="Aramanızla eşleşen bir ürün bulunamadı." />
+      ) : (
+        <div className={s.productList}>
+          {filteredProducts?.map((product) => (
+            <ProductCard
+              key={product.id}
+              title={limitString(product.title, 50)}
+              price={product.price}
+              image={product.image}
+              id={product.id.toString()}
+            />
+          ))}
+        </div>
+      )}
     </>
   );
 };

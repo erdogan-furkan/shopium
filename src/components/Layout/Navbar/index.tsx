@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   RiMenuLine,
   RiShoppingCartLine,
@@ -13,6 +14,7 @@ import ThemeSwitcher from "../../ThemeSwitcher";
 import s from "./styles.module.scss";
 
 const Navbar = () => {
+  const { t } = useTranslation();
   const [isActive, setIsActive] = useState(false);
 
   const toggleMenu = () => {
@@ -45,7 +47,7 @@ const Navbar = () => {
                   }
                 >
                   <RiShoppingCartLine size={"1.5rem"} />
-                  <span>Sepetim</span>
+                  <span>{t("My Cart")}</span>
                 </NavLink>
               </li>
               <li className={s.navbarItem}>
@@ -56,7 +58,7 @@ const Navbar = () => {
                   }
                 >
                   <RiHeartFill size={"1.5rem"} />
-                  <span>Favorilerim</span>
+                  <span>{t("My Favorites")}</span>
                 </NavLink>
               </li>
             </ul>
@@ -76,21 +78,21 @@ const Navbar = () => {
 
             <ul className={s.navbarMenuMobile}>
               <li className={s.navbarItem}>
-                <span>Dil</span>
+                <span>{t("Language")}</span>
                 <LanguageSwitcher />
               </li>
               <li className={s.navbarItem}>
-                <span>Tema</span>
+                <span>{t("Theme")}</span>
                 <ThemeSwitcher />
               </li>
               <li className={s.navbarItem}>
-                <span>Sepetim</span>
+                <span>{t("My Cart")}</span>
                 <NavLink to={"/"}>
                   <RiShoppingCartLine size={"1.5rem"} />
                 </NavLink>
               </li>
               <li className={s.navbarItem}>
-                <span>Favorilerim</span>
+                <span>{t("My Favorites")}</span>
                 <NavLink to={"/"}>
                   <RiHeartFill size={"1.5rem"} />
                 </NavLink>

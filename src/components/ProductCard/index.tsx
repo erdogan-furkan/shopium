@@ -28,16 +28,16 @@ const ProductCard: React.FC<Product> = (product) => {
     dispatch(toggleFavorite(product));
 
     if (productIsFavorite) {
-      toast.success("Ürün favorilerden çıkarıldı!");
+      toast.success(t("Product removed from favorites successfully!"));
     } else {
-      toast.success("Ürün favorilere eklendi!");
+      toast.success(t("Product added to favorites successfully!"));
     }
   };
 
   const handleOnClick = () => {
     dispatch(addProduct(product));
 
-    toast.success("Ürün sepete eklendi!");
+    toast.success(t("Product added to cart successfully!"));
   };
 
   return (
@@ -59,7 +59,7 @@ const ProductCard: React.FC<Product> = (product) => {
           <span className={s.cardPrice}>${product.price}</span>
           {cartHasProduct ? (
             <button className={s.cardAddButton}>
-              <Link to={"/cart"}>Sepete Git</Link>
+              <Link to={"/cart"}>{t("Go to cart")}</Link>
             </button>
           ) : (
             <button className={s.cardAddButton} onClick={handleOnClick}>

@@ -1,4 +1,23 @@
 {
+  "DefaultError": "Bir hata meydana geldi!",
   "Add to cart": "Sepete ekle",
-  "DefaultError": "Bir hata meydana geldi!"
+  "Language": "Dil",
+  "Theme": "Tema",
+  "My Cart": "Sepetim",
+  "My Favorites": "Favorilerim",
+  "Type to search...": "Aramak için yazın...",
+  "Ascending": "Artan",
+  "Descending": "Azalan",
+  "Go to Cart": "Sepete git",
+  "Remove from Cart": "Sepetten kaldır",
+  "Are you sure you want to remove the product from the cart?": "Ürünü sepetten kaldırmak istediğize emin misiniz?",
+  "Remove product from cart": "Ürünü sepetten kaldır",
+  "Remove product from cart and add to favorites": "Ürünü sepetten kaldır ve favorilere ekle",
+  "Your cart is empty.": "Sepetiniz şu an boş.",
+  "There are no products in your favorite list.": "Favori listenizde ürün bulunmamaktadır.",
+  "Product added to cart successfully!": "Ürün sepete başarılı bir şekilde eklendi!",
+  "Product removed from cart successfully!": "Ürün sepetten başarılı bir şekilde kaldırıldı!",
+  "Product added to favorites successfully!": "Ürün favorilere başarılı bir şekilde eklendi!",
+  "Product removed from favorites successfully!": "Ürün favorilerden başarılı bir şekilde kaldırıldı!",
+  "Product has been removed from the cart and added to favourites!": "Ürün sepetten kaldırıldı ve favorilere eklendi!"
 }
