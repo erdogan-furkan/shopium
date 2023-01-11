@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import useLocalStorage from "./useLocalStorage";
-import i18next, { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 export default function useLang() {
   const { i18n } = useTranslation();

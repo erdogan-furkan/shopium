@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { RxMinus, RxPlus } from "react-icons/rx";
 import s from "./styles.module.scss";
 
@@ -17,17 +16,6 @@ const QuantityInput: React.FC<Props> = ({
   handleIncrement,
   handleDecrement,
 }) => {
-  // const [quantity, setQuantity] = useState(initialValue);
-
-  // const handleIncrement = () => {
-  //   if (maxValue && quantity === maxValue) return;
-  //   setQuantity((prevState) => prevState + 1);
-  // };
-  // const handleDecrement = () => {
-  //   if (minValue && quantity === minValue) return;
-  //   setQuantity((prevState) => prevState - 1);
-  // };
-
   return (
     <div className={s.quantityWrapper}>
       <span className={s.quantityButton} onClick={handleDecrement}>

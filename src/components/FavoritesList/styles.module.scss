@@ -1,0 +1,15 @@
+@use "../../assets/styles/mixins.scss" as *;
+
+.productList {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(1, 1fr);
+
+  @include for-min-(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include for-min-(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

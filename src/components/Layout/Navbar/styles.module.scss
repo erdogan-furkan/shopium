@@ -21,7 +21,8 @@
   border: 1px solid transparent;
   transition: var(--transition-sm);
 
-  &:hover {
+  &:hover,
+  &.active {
     border-color: var(--color-1);
   }
 }

@@ -38,13 +38,23 @@ const Navbar = () => {
                 <ThemeSwitcher />
               </li>
               <li className={s.navbarItem}>
-                <NavLink to={"/cart"} className={s.navbarItemCart}>
+                <NavLink
+                  to={"/cart"}
+                  className={({ isActive }) =>
+                    classNames(s.navbarItemCart, { [s.active]: isActive })
+                  }
+                >
                   <RiShoppingCartLine size={"1.5rem"} />
                   <span>Sepetim</span>
                 </NavLink>
               </li>
               <li className={s.navbarItem}>
-                <NavLink to={"/"} className={s.navbarItemFavorites}>
+                <NavLink
+                  to={"/favorites"}
+                  className={({ isActive }) =>
+                    classNames(s.navbarItemFavorites, { [s.active]: isActive })
+                  }
+                >
                   <RiHeartFill size={"1.5rem"} />
                   <span>Favorilerim</span>
                 </NavLink>

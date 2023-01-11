@@ -6,7 +6,7 @@
   width: fit-content;
 
   @include for-min-(md) {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 }
 
