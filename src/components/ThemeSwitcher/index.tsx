@@ -1,9 +1,13 @@
 import useDarkMode from "../../hooks/useDarkMode";
+import { toggleDarkMode } from "../../redux/slices/themeSlice";
+import { useDispatch } from "../../redux/store";
 import Switch from "../Switch";
 
 const ThemeSwitcher = () => {
-  const [isDarkModeEnabled, setIsDarkModeEnabled] = useDarkMode();
-  const handleThemeChange = () => setIsDarkModeEnabled(!isDarkModeEnabled);
+  const dispatch = useDispatch();
+
+  const [isDarkModeEnabled] = useDarkMode();
+  const handleThemeChange = () => dispatch(toggleDarkMode());
 
   return <Switch checked={isDarkModeEnabled} onChange={handleThemeChange} />;
 };

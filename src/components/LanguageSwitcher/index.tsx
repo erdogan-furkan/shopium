@@ -1,8 +1,8 @@
 import s from "./styles.module.scss";
 import { MdLanguage } from "react-icons/md";
-import Select from "react-select";
 import useLang from "../../hooks/useLang";
-import classNames from "classnames";
+import { useDispatch } from "../../redux/store";
+import { setActiveLang } from "../../redux/slices/themeSlice";
 
 interface Language {
   value: string;
@@ -15,29 +15,27 @@ const languages: Language[] = [
 ];
 
 const LanguageSwitcher = () => {
-  const [activeLang, setActiveLang] = useLang();
+  const dispatch = useDispatch();
+  const [activeLang] = useLang();
 
-  const handleChange = (option: Language | null) => {
-    setActiveLang(option?.value);
+  const handleChange = (e: any) => {
+    dispatch(setActiveLang(e.currentTarget.value as string));
   };
 
   return (
     <div className={s.container}>
       <MdLanguage size={"1.5rem"} />
-      <Select
-        defaultValue={languages.find((lang) => lang.value === activeLang)}
-        options={languages}
-        onChange={handleChange}
-        isSearchable={false}
-        classNames={{
-          control: () => s.control,
-          indicatorsContainer: () => s.indicatorContainer,
-          singleValue: () => s.singleValue,
-          menuList: () => s.menuList,
-          option: (state) =>
-            classNames(s.option, { [s.selected]: state.isSelected }),
-        }}
-      />
+      <select className={s.languageSwitcher} onChange={handleChange}>
+        {languages.map((lang) => (
+          <option
+            key={lang.value}
+            value={lang.value}
+            selected={lang.value === activeLang}
+          >
+            {lang.label}
+          </option>
+        ))}
+      </select>
     </div>
   );
 };

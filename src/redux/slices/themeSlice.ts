@@ -14,8 +14,8 @@ const themeSlice = createSlice({
   name: "theme",
   initialState,
   reducers: {
-    setDarkMode: (state, action: PayloadAction<boolean>) => {
-      state.darkMode = action.payload;
+    toggleDarkMode: (state) => {
+      state.darkMode = !state.darkMode;
     },
     setActiveLang: (state, action: PayloadAction<string>) => {
       state.activeLang = action.payload;
@@ -23,5 +23,5 @@ const themeSlice = createSlice({
   },
 });
 
-export const { setDarkMode, setActiveLang } = themeSlice.actions;
+export const { toggleDarkMode, setActiveLang } = themeSlice.actions;
 export default themeSlice.reducer;

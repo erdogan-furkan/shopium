@@ -7,6 +7,7 @@ import {
 import {
   cartListenerMiddleware,
   favoriteListenerMiddleware,
+  themeListenerMiddleware,
 } from "./middleware";
 import cartSlice, {
   initialState as cartInitinalState,
@@ -14,15 +15,19 @@ import cartSlice, {
 import favoriteSlice, {
   initialState as favoriteInitialState,
 } from "./slices/favoriteSlice";
-import themeSlice from "./slices/themeSlice";
+import themeSlice, {
+  initialState as themeInitialState,
+} from "./slices/themeSlice";
 
 const cartState = JSON.parse(localStorage.getItem("cart") || "null");
 const favoriteState = JSON.parse(localStorage.getItem("favorite") || "null");
+const themeState = JSON.parse(localStorage.getItem("theme") || "null");
 
 const store = configureStore({
   preloadedState: {
     cart: cartState === null ? cartInitinalState : cartState,
     favorite: favoriteState === null ? favoriteInitialState : favoriteState,
+    theme: themeState === null ? themeInitialState : themeState,
   },
   reducer: {
     cart: cartSlice,
@@ -33,6 +38,7 @@ const store = configureStore({
     ...getDefaultMiddleware(),
     cartListenerMiddleware.middleware,
     favoriteListenerMiddleware.middleware,
+    themeListenerMiddleware.middleware,
   ],
 });
 

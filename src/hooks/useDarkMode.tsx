@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import usePrefersDarkMode from "./usePrefersDarkMode";
-import useLocalStorage from "./useLocalStorage";
+import { useSelector } from "../redux/store";
 
 export default function useDarkMode() {
   const prefersDarkMode = usePrefersDarkMode();
-  const [isEnabled, setIsEnabled] = useLocalStorage("dark-mode", undefined);
+  const isEnabled = useSelector((state) => state.theme.darkMode);
 
   const enabled = isEnabled === undefined ? prefersDarkMode : isEnabled;
 
@@ -14,5 +14,5 @@ export default function useDarkMode() {
     root.setAttribute("data-theme", enabled ? "dark" : "light");
   }, [enabled]);
 
-  return [enabled, setIsEnabled];
+  return [enabled];
 }

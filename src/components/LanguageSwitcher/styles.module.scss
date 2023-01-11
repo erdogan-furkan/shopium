@@ -4,47 +4,10 @@
   justify-content: center;
 }
 
-.control {
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  cursor: pointer !important;
+.languageSwitcher {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: currentColor;
+  cursor: pointer;
 }
-
-.indicatorContainer {
-  display: none !important;
-}
-
-.singleValue {
-  color: inherit !important;
-}
-
-.menuList {
-  background: var(--color-2) !important;
-  min-width: 5rem;
-}
-
-.option {
-  background: var(--color-2) !important;
-
-  &:active {
-    background: var(--color-3) !important;
-  }
-}
-
-.selected {
-  background: var(--color-1) !important;
-}
-
-// Select template
-// <div class="react-select-container">
-//   <div class="react-select__control">
-//     <div class="react-select__value-container">...</div>
-//     <div class="react-select__indicators">...</div>
-//   </div>
-//   <div class="react-select__menu">
-//     <div class="react-select__menu-list">
-//       <div class="react-select__option">...</div>
-//     </div>
-//   </div>
-// </div>

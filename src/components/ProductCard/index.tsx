@@ -59,7 +59,7 @@ const ProductCard: React.FC<Product> = (product) => {
           <span className={s.cardPrice}>${product.price}</span>
           {cartHasProduct ? (
             <button className={s.cardAddButton}>
-              <Link to={"/cart"}>{t("Go to cart")}</Link>
+              <Link to={"/cart"}>{t("Go to Cart")}</Link>
             </button>
           ) : (
             <button className={s.cardAddButton} onClick={handleOnClick}>

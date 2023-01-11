@@ -4,7 +4,6 @@ import ProductCard from "../ProductCard";
 import { useEffect, useState } from "react";
 import Spinner from "../Spinner";
 import ErrorCard from "../ErrorCard";
-import Select from "react-select";
 import InfoCard from "../InfoCard";
 import { useTranslation } from "react-i18next";
 
@@ -81,7 +80,24 @@ const ProductList = () => {
           onChange={(e) => setSearchFilter(e.currentTarget.value)}
           placeholder={t("Type to search...") as string}
         />
-        <Select
+        <select
+          className={s.sortDropdown}
+          onChange={(e) =>
+            setSortOption(
+              sortOptions.find(
+                (opt) =>
+                  opt.value.toString() === e.currentTarget.value.toString()
+              ) as any
+            )
+          }
+        >
+          {sortOptions.map((opt) => (
+            <option key={opt.value} value={opt.value}>
+              {opt.label}
+            </option>
+          ))}
+        </select>
+        {/* <Select
           defaultValue={sortOption}
           options={sortOptions}
           onChange={(option: any) => setSortOption(option)}
@@ -103,7 +119,7 @@ const ProductList = () => {
               background: "var(--color-4)",
             }),
           }}
-        />
+        /> */}
       </div>
 
       {filteredProducts?.length === 0 ? (

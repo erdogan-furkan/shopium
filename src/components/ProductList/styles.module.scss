@@ -35,4 +35,19 @@
       background-color: var(--color-4);
     }
   }
+
+  .sortDropdown {
+    background-color: transparent;
+    color: var(--color-main-text);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    transition: var(--transition-sm);
+
+    &:hover {
+      color: var(--color-black);
+      background-color: var(--color-4);
+    }
+  }
 }
