@@ -71,6 +71,38 @@
 
   &:hover {
     color: var(--color-main-text);
-    background-color: var(--color-main-bgg);
+    background-color: var(--color-main-bg);
+  }
+}
+
+.modal {
+  @include flex-between;
+  flex-direction: column;
+  height: 10rem;
+}
+
+.modalActions {
+  @include flex-centered;
+  flex-direction: column;
+  align-items: stretch;
+
+  @include for-min-(md) {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+.modalRemoveButton,
+.modalFavoriteButton {
+  padding: 1rem;
+  cursor: pointer;
+  background-color: var(--color-main-text);
+  color: var(--color-main-bg);
+  border: 1px solid currentColor;
+  transition: var(--transition-sm);
+
+  &:hover {
+    color: var(--color-main-text);
+    background-color: var(--color-main-bg);
   }
 }

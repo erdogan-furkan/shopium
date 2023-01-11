@@ -4,23 +4,35 @@ import {
   useDispatch as _useDispatch,
   useSelector as _useSelector,
 } from "react-redux";
-import { cartListenerMiddleware } from "./middleware";
-import cartSlice, { initialState } from "./slices/cartSlice";
+import {
+  cartListenerMiddleware,
+  favoriteListenerMiddleware,
+} from "./middleware";
+import cartSlice, {
+  initialState as cartInitinalState,
+} from "./slices/cartSlice";
+import favoriteSlice, {
+  initialState as favoriteInitialState,
+} from "./slices/favoriteSlice";
 import themeSlice from "./slices/themeSlice";
 
 const cartState = JSON.parse(localStorage.getItem("cart") || "null");
+const favoriteState = JSON.parse(localStorage.getItem("favorite") || "null");
 
 const store = configureStore({
   preloadedState: {
-    cart: cartState === null ? initialState : cartState,
+    cart: cartState === null ? cartInitinalState : cartState,
+    favorite: favoriteState === null ? favoriteInitialState : favoriteState,
   },
   reducer: {
     cart: cartSlice,
+    favorite: favoriteSlice,
     theme: themeSlice,
   },
   middleware: (getDefaultMiddleware) => [
     ...getDefaultMiddleware(),
     cartListenerMiddleware.middleware,
+    favoriteListenerMiddleware.middleware,
   ],
 });
 

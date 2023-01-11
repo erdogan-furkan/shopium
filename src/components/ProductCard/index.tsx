@@ -1,4 +1,5 @@
 import s from "./styles.module.scss";
+import toast from "react-hot-toast";
 import { RiHeartLine } from "react-icons/ri";
 import { useTranslation } from "react-i18next";
 import { addProduct } from "../../redux/slices/cartSlice";
@@ -24,6 +25,8 @@ const ProductCard: React.FC<Product> = ({ id, title, price, image }) => {
         image,
       })
     );
+
+    toast.success("Ürün sepete eklendi!");
   };
 
   return (
