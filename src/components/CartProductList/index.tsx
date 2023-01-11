@@ -8,9 +8,11 @@ const CartProductList = () => {
   const { t } = useTranslation();
   const products = useSelector((state) => state.cart.products);
 
-  const total = products.reduce((sum, { price, quantity }) => {
-    return sum + price * quantity;
-  }, 0);
+  const total = products
+    .reduce((sum, { price, quantity }) => {
+      return sum + price * quantity;
+    }, 0)
+    .toFixed(2);
 
   if (!products || products.length === 0) {
     return <InfoCard infoMessage={t("Your cart is empty.")} />;
